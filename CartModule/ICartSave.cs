@@ -1,4 +1,6 @@
-﻿namespace CartModule
+﻿using Common;
+
+namespace CartModule
 {
     public interface ICartSave
     {
@@ -9,9 +11,7 @@
     {
         public void Save(FinalProduct finalProduct)
         {
-            // Logic to save the final product to the cart
-
-            Console.WriteLine($"Product {finalProduct.Name} saved to cart with price {finalProduct.DiscountedPrice}");
+            MyLogger.LogInfo($"Product {finalProduct.Name} saved to cart with price {finalProduct.DiscountedPrice}");
         }
     }
 }
