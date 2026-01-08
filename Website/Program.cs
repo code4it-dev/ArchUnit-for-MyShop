@@ -8,6 +8,9 @@ namespace Website
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+            builder.Services.AddSingleton<CartModule.ICartSave, CartModule.CartSave>();
+            builder.Services.AddSingleton<ProductsModule.IProductsStorage, ProductsModule.ProductsStorage>();
+            builder.Services.AddSingleton<PromotionsModule.IPromotionsService, PromotionsModule.PromoService>();
 
             var app = builder.Build();
 
